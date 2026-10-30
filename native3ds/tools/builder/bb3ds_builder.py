@@ -205,6 +205,7 @@ def build(game_src: Path, work: Path, out: Path) -> None:
     p = subprocess.run([sys.executable, *([] if FROZEN else [__file__]), str(TOOLS / "build_cia.py"),
                         "--makerom", exe("makerom"), "--bannertool", exe("bannertool"), "--ffmpeg", ff,
                         "--logo", str(gen / "uiart" / "logo.png"), "--clip", str(romfs / "music" / "pv_cathy_e2.wav"),
+                        *(["--cgfx", str(PAYLOAD / "banner.cgfx")] if (PAYLOAD / "banner.cgfx").is_file() else []),   # 3D banner
                         "--out", str(out / "BeatBanger.cia")])
     if p.returncode != 0:
         raise SystemExit("build_cia.py failed")

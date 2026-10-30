@@ -52,6 +52,20 @@ def main() -> int:
         raise SystemExit("run make first (beatbanger_3ds.elf)")
     subprocess.run([str(STRIP), "--strip-debug", "-o", str(stage / "payload" / "beatbanger_3ds.elf"), str(elf)], check=True)
     shutil.copy2(ROOT / "tools" / "cia" / "beatbanger.rsf", stage / "payload" / "beatbanger.rsf")
+    # the HOME Menu's 3D banner (the logo badge; its sound still comes from the player's game): made by
+    # build_cia.py --pycgfx, which needs a pycgfx checkout the builder does not carry
+    cgfx = ROOT / "generated" / "cia" / "banner.cgfx"
+    if not cgfx.is_file():
+        raise SystemExit("missing generated/cia/banner.cgfx: run tools/build_cia.py --pycgfx <checkout> once")
+    shutil.copy2(cgfx, stage / "payload" / "banner.cgfx")
+    # the warning screen's B easter egg (build_boot.py --egg; a clip from outside the game, not rebuilt from it): the
+    # builder copies payload/romfs over the romfs it makes
+    eggs = sorted((ROOT / "romfs" / "boot").glob("egg*"))
+    if not any(e.name == "egg.bbvid" for e in eggs):
+        raise SystemExit("missing romfs/boot/egg.bbvid: run tools/build_boot.py --egg <clip> --egg-only once")
+    (stage / "payload" / "romfs" / "boot").mkdir(parents=True)
+    for e in eggs:
+        shutil.copy2(e, stage / "payload" / "romfs" / "boot" / e.name)
 
     sys.path.insert(0, str(ROOT / "tools"))
     from export_public import REWRITES   # the same local-path rewrites as the public source tree
