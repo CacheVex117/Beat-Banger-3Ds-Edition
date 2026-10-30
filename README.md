@@ -128,7 +128,7 @@ right after the problem. For builder problems, include the text from the builder
 
 ## Scope and credits
 
-This is an unofficial homebrew port. The warning screen's easter-egg clip is not included. Some presentation is simplified
+This is an unofficial homebrew port. Some presentation is simplified
 for the 3DS, and some mod features are not converted (see above). Bugs may remain.
 
 Thanks to **Bunfan Studios** for Beat Banger, **devkitPro** (libctru, citro2d, citro3d, tex3ds, 3dstools), **GDRE Tools**,
