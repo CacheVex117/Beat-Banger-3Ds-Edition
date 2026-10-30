@@ -42,6 +42,7 @@ def main() -> int:
     ap.add_argument("--bannertool", type=Path, required=True)
     ap.add_argument("--pycgfx", type=Path, help="pycgfx checkout: build the 3D banner (default: the flat one); the one-card banner "
                     "works on a New 2DS XL, try any change to it with --test first (SPRINT_HANDOFF 3AB)")
+    ap.add_argument("--cgfx", type=Path, help="a ready 3D banner model (banner.cgfx from a --pycgfx build) instead of --pycgfx")
     ap.add_argument("--logo", type=Path, default=ROOT / "generated" / "cia" / "logo.png", help="the banner logo (RGBA PNG)")
     ap.add_argument("--clip", type=Path, default=ROOT / "romfs" / "music" / "pv_cathy_e2.wav",
                     help="banner sound source (In The Dorms level-select preview, Volume 2)")
@@ -84,7 +85,9 @@ def main() -> int:
                     "-af", "afade=t=in:st=0:d=0.5,afade=t=out:st=2.2:d=0.8", "-ar", "32000", "-ac", "2", "-c:a", "pcm_s16le",
                     str(work / "banner.wav")], check=True)
     image = ["-i", str(work / "banner.png")]
-    if args.pycgfx:
+    if args.cgfx:   # a 3D banner made earlier with --pycgfx (the builder ships one: it carries only the logo)
+        image = ["-ci", str(args.cgfx)]
+    elif args.pycgfx:
         subprocess.run([sys.executable, str(ROOT / "tools" / "cia" / "make_banner3d.py"), "--pycgfx", str(args.pycgfx),
                         "--logo", str(args.logo), "--out", str(work / "banner.cgfx")], check=True)
         image = ["-ci", str(work / "banner.cgfx")]
