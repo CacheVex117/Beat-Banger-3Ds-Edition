@@ -17,6 +17,9 @@ aims to keep the original's timing, scoring and progression while adapting the p
 
 ## Features
 
+<img width="517" height="600" alt="3-level-select" src="https://github.com/user-attachments/assets/f23c76b0-9aa1-4328-8c96-060605702fd6" />
+
+
 - **Volume 1, Volume 2** (In The Closet, In The Dorms) and **After Class**, each on Virgin, Normal and Expert.
 - The **character art and climax videos** on the top screen; the **note highway, score, combo and hearts** on the bottom.
 - **Pre- and post-level cutscenes**, the **shop**, power-ups, ranks, achievements, the gallery, the collection, the theater,
@@ -29,6 +32,9 @@ aims to keep the original's timing, scoring and progression while adapting the p
 - Progress saves to the SD card, with a backup copy.
 
 ## What to expect
+
+<img width="517" height="600" alt="2-shop" src="https://github.com/user-attachments/assets/b2ac95f3-0e79-4654-9fc7-8fb30a0d4a40" />
+
 
 | Console | Status |
 |---|---|
@@ -46,6 +52,9 @@ them. Hardware reports, especially from original 3DS owners, are welcome.
 - About **450 MB** of free SD space for the game (plus the same again while installing the CIA), and room for mods.
 
 ## Build it the easy way (Windows)
+
+<img width="517" height="600" alt="1-main-menu" src="https://github.com/user-attachments/assets/ac5e36c6-7409-4b47-8a46-e2ce45c16e40" />
+
 
 1. Download the release zip from the [latest release](https://github.com/CacheVex117/Beat-Banger-3Ds-Edition/releases/latest) and extract it.
 2. Double-click **`3DS Builder (PC)\BB3DS-Builder.exe`**. It finds a normal Steam install by itself; otherwise drag your
