@@ -1,6 +1,6 @@
 # Beat Banger for Nintendo 3DS
 
-<p align="center"><img src="https://github.com/user-attachments/assets/..." width="300" alt="Beat Banger 3DS Edition cover"></p>
+<img width="598" height="547" alt="bb3d" src="https://github.com/user-attachments/assets/7ab09faa-2f37-4063-b758-133fd69006e4" />
 
 **18+ only. Beat Banger is an adult game with explicit content.**
 
