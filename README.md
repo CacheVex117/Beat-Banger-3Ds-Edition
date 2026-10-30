@@ -1,5 +1,7 @@
 # Beat Banger for Nintendo 3DS
 
+<p align="center"><img src="https://github.com/user-attachments/assets/..." width="300" alt="Beat Banger 3DS Edition cover"></p>
+
 **18+ only. Beat Banger is an adult game with explicit content.**
 
 Beat Banger, the rhythm game by Bunfan Studios, running natively on a homebrewed **Nintendo 3DS**. This is not an emulator
